@@ -44,9 +44,10 @@ module.exports = {
 
   resolve: {
     alias: {
-      '@Component': path.resolve(__dirname, jsPath, 'component'),
+      '@Component': path.resolve(__dirname, jsPath, 'view/component'),
       Scss: path.resolve(__dirname, cssPath),
-      '@Interface': path.resolve(__dirname, jsPath, 'interface'),
+      '@Store': path.resolve(__dirname, jsPath, 'store'),
+      '@Reducer': path.resolve(__dirname, jsPath, 'reducer'),
       '@Images': path.resolve(__dirname, jsPath, 'images'),
       '@View': path.resolve(__dirname, jsPath, 'view'),
     },
