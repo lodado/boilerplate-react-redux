@@ -1,8 +1,10 @@
-import { counterSlice } from '@Reducer/';
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+const initialState = {
+    value: 0,
+    
+    moveState : {
+      x: 0,
+      y: 0,
+    }
+};
 
-const store = configureStore({
-  reducer: counterSlice.reducer,
-});
-
-export { store };
+export default initialState;

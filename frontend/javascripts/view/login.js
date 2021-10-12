@@ -1,16 +1,17 @@
-import React, { useReducer } from 'react';
+import React, { useEffect} from "react";
 import ReactDOM from 'react-dom';
-import { counterSlice, initialState } from '@Reducer/';
+import { useSelector, useDispatch } from 'react-redux';
 import CustomButton from '@Component/CustomButton';
 
 export const LoginView = (props) => {
-  const [state, dispatch] = useReducer(counterSlice.reducer, initialState);
+    const state = useSelector(state=>state);
+    const dispatch = useDispatch();
 
-  return (
-    <div className="loginView">
-      <img src="aaa" alt="logo-image"></img>
+    return (
+      <div className='loginView'>
+        <img  alt='logo-image'></img>
 
-      <CustomButton name={'로그인'} />
-    </div>
-  );
-};
+        <CustomButton name={'로그인'}/>
+      </div>
+    );
+}

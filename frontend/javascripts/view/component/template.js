@@ -1,11 +1,19 @@
-import React, { useReducer } from 'react';
+import React, { useEffect} from "react";
 import ReactDOM from 'react-dom';
-import { counterSlice, initialState } from '@Reducer/';
+import { useSelector, useDispatch } from 'react-redux';
 
-export const Test = (props) => {
-  const [state, dispatch] = useReducer(counterSlice.reducer, initialState);
+export const Template = (props) => {
+  //const [state, dispatch] = useReducer(counterSlice.reducer, initialState);
 
-  return <div></div>;
-};
+  const state = useSelector(state=>state);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      
+    </div>
+  );
+}
+
 
 //export const Test = connect(mapStateToProps, counterSlice.actions)(APP);

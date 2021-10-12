@@ -1,14 +1,21 @@
-import React, { useReducer } from 'react';
+import React, { useEffect} from "react";
 import ReactDOM from 'react-dom';
-import { counterSlice, initialState } from '@Reducer/';
+import { useSelector, useDispatch } from 'react-redux';
+
+import {StyledButton} from '@Style';
 
 const CustomButton = (props) => {
-  const [state, dispatch] = useReducer(counterSlice.reducer, initialState);
+    const state = useSelector(state=>state);
+    const dispatch = useDispatch();
+    
+    const {name} = props;
 
-  const { name } = props;
-
-  return <button className="customButton">{name}</button>;
-};
+    return (
+      <StyledButton className="customButton">
+          {name}
+      </StyledButton>
+    );
+}
 
 export default CustomButton;
 
